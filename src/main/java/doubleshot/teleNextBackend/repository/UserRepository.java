@@ -13,4 +13,8 @@ public class UserRepository {
     public User getUserById(String id){
         return repo.findUserById(id);
     }
+
+    public User saveUser(User user){
+        return repo.save(user);
+    }
 }

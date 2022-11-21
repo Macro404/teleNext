@@ -1,18 +1,19 @@
 package doubleshot.teleNextBackend.model;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "users")
+@Getter @Setter
 public class User {
 
     @Id
-    @GeneratedValue(generator =  "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "id", unique = true)
     private String id;
 
     @OneToMany(
@@ -30,4 +31,16 @@ public class User {
     private String phoneNumber;
 
     private String personNumber;
+
+    public User(String name, String address, String phoneNumber, String personNumber) {
+        this.id = UUID.randomUUID().toString();
+        this.name = name;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.personNumber = personNumber;
+    }
+    public User() {
+
+    }
+
 }
