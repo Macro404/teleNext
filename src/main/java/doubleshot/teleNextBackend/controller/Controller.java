@@ -17,6 +17,7 @@ public class Controller {
     UserService service;
 
     @GetMapping("/users/{id}")
+    @CrossOrigin
     public ResponseEntity<UserDTO> findUserById(@PathVariable String id) {
         try {
             return ResponseEntity.ok().body(service.getUserById(id));
@@ -25,6 +26,7 @@ public class Controller {
         }
     }
     @PostMapping("/users")
+    @CrossOrigin
     public ResponseEntity createUser(@RequestBody UserDTO userDto){
         try {
             User user = service.createUser(userDto);
