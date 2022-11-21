@@ -1,9 +1,6 @@
 package doubleshot.teleNextBackend.controller;
 
-import doubleshot.teleNextBackend.model.Phone;
-import doubleshot.teleNextBackend.model.ProductsDTO;
-import doubleshot.teleNextBackend.model.User;
-import doubleshot.teleNextBackend.model.UserDTO;
+import doubleshot.teleNextBackend.model.*;
 import doubleshot.teleNextBackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -48,7 +45,7 @@ public class Controller {
         }
     }
     @PostMapping("/phones")
-    public ResponseEntity addPhone(@RequestBody Phone phone){
+    public ResponseEntity addPhone(@RequestBody PhoneDTO phone){
         try {
             return ResponseEntity.ok().body(service.addPhone(phone));
         } catch (Exception e) {

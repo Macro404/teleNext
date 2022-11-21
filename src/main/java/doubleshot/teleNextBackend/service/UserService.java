@@ -1,6 +1,7 @@
 package doubleshot.teleNextBackend.service;
 
 import doubleshot.teleNextBackend.model.Phone;
+import doubleshot.teleNextBackend.model.PhoneDTO;
 import doubleshot.teleNextBackend.model.User;
 import doubleshot.teleNextBackend.model.UserDTO;
 import doubleshot.teleNextBackend.repository.UserRepository;
@@ -35,8 +36,7 @@ public class UserService {
         userRepo.deleteUser(id);
     }
 
-    public Phone addPhone(Phone phone) {
-        phone.setId(UUID.randomUUID().toString());
-        return userRepo.savePhone(phone);
+    public Phone addPhone(PhoneDTO dto) {
+        return userRepo.savePhone(new Phone(dto.model(), dto.price(), dto.camera(), dto.cpu(), dto.battery(), dto.screen(), dto.images()));
     }
 }
