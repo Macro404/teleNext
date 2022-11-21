@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class UserService {
     @Autowired
@@ -34,6 +36,7 @@ public class UserService {
     }
 
     public Phone addPhone(Phone phone) {
+        phone.setId(UUID.randomUUID().toString());
         return userRepo.savePhone(phone);
     }
 }
