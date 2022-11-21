@@ -1,5 +1,5 @@
 package doubleshot.teleNextBackend.config;
-
+/*
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -16,9 +16,9 @@ public class SecurityConfiguration {
         return http.authorizeRequests()
                 .mvcMatchers("/").permitAll()
                 .and().cors()
-                .and().oauth2ResourceServer().jwt()
-                .and()
+                //.and().oauth2ResourceServer().jwt()
+                //.and()
                 .and().build();
     }
 
-}
+}*/

@@ -20,7 +20,7 @@ public class User {
             targetEntity = Subscription.class,
             cascade = CascadeType.ALL,
             orphanRemoval = true,
-            mappedBy = "user_id"
+            mappedBy = "userId"
     )
     private List<Subscription> subscriptions;
 
