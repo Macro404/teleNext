@@ -2,6 +2,7 @@ package doubleshot.teleNextBackend.model;
 
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.List;
@@ -19,6 +20,7 @@ public class Phone {
     String cpu;
     String battery;
     String screen;
+    @Column(length = 1500)
     String images;
 
     public Phone(String model, double price, String camera, String cpu, String battery, String screen, String images) {
