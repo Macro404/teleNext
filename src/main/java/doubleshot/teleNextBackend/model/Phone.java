@@ -19,8 +19,9 @@ public class Phone {
     String cpu;
     String battery;
     String screen;
+    String images;
 
-    public Phone(String model, double price, String camera, String cpu, String battery, String screen) {
+    public Phone(String model, double price, String camera, String cpu, String battery, String screen, String images) {
         this.id = UUID.randomUUID().toString();
         this.model = model;
         this.price = price;
@@ -28,6 +29,7 @@ public class Phone {
         this.cpu = cpu;
         this.battery = battery;
         this.screen = screen;
+        this.images = images;
     }
 
     public Phone() {
