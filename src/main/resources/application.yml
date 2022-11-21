@@ -6,9 +6,9 @@ spring:
   # add appropriate configuraton to load the database here
   #
   sql:
-  output:
-    ansi:
-      enabled: always
+    init:
+      platform: postgresql
+      mode: always
 
   #
   # Add standalone postgres datasource config here
