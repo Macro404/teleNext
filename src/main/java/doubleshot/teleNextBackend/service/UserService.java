@@ -1,9 +1,11 @@
 package doubleshot.teleNextBackend.service;
 
+import doubleshot.teleNextBackend.model.Phone;
 import doubleshot.teleNextBackend.model.User;
 import doubleshot.teleNextBackend.model.UserDTO;
 import doubleshot.teleNextBackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,5 +27,13 @@ public class UserService {
 
     public UserDTO  userToUserDto(User user){
         return new UserDTO(user.getName(), user.getAddress(), user.getPhoneNumber(), user.getPersonNumber());
+    }
+
+    public void deleteUser(String id) {
+        userRepo.deleteUser(id);
+    }
+
+    public Phone addPhone(Phone phone) {
+        return userRepo.savePhone(phone);
     }
 }
