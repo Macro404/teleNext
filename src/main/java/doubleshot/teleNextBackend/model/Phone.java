@@ -28,6 +28,6 @@ public class Phone {
     }
 
     public Phone() {
-
+        this.id = UUID.randomUUID().toString();
     }
 }
