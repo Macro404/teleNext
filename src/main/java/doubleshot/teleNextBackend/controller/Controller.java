@@ -52,6 +52,6 @@ public class Controller {
     }
     @GetMapping("/")
     public ResponseEntity<ProductsDTO> getProducts(){
-        return ResponseEntity.ok().body(service.getAllProducts());
+        return ResponseEntity.status(200).body(service.getAllProducts());
     }
 }
