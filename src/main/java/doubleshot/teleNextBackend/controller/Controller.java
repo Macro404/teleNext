@@ -50,7 +50,7 @@ public class Controller {
             return ResponseEntity.badRequest().build();
         }
     }
-    @GetMapping
+    @GetMapping("/")
     public ResponseEntity<ProductsDTO> getProducts(){
         return ResponseEntity.ok().body(service.getAllProducts());
     }
