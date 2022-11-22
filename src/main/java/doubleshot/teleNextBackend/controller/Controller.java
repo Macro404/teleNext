@@ -52,6 +52,10 @@ public class Controller {
     }
     @GetMapping("/")
     public ResponseEntity<ProductsDTO> getProducts(){
-        return ResponseEntity.status(200).body(service.getAllProducts());
+        try{
+            return ResponseEntity.status(200).body(service.getAllProducts());
+        }catch (Exception e){
+            return ResponseEntity.notFound().build();
+        }
     }
 }
