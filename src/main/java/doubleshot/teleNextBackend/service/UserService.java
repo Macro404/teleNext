@@ -1,9 +1,6 @@
 package doubleshot.teleNextBackend.service;
 
-import doubleshot.teleNextBackend.model.Phone;
-import doubleshot.teleNextBackend.model.PhoneDTO;
-import doubleshot.teleNextBackend.model.User;
-import doubleshot.teleNextBackend.model.UserDTO;
+import doubleshot.teleNextBackend.model.*;
 import doubleshot.teleNextBackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -38,5 +35,9 @@ public class UserService {
 
     public Phone addPhone(PhoneDTO dto) {
         return userRepo.savePhone(new Phone(dto.model(), dto.price(), dto.camera(), dto.cpu(), dto.battery(), dto.screen(), dto.images()));
+    }
+
+    public ProductsDTO getAllProducts(){
+        return userRepo.getAllProducts();
     }
 }

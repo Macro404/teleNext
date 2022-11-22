@@ -54,6 +54,6 @@ public class Controller {
     }
     @GetMapping
     public ResponseEntity getProducts(){
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body(service.getAllProducts());
     }
 }
