@@ -68,7 +68,7 @@ public class Controller {
         }
     }
     @PostMapping("/subscriptions")
-    public ResponseEntity addSubscription(Subscription subscription) {
+    public ResponseEntity addSubscription(@RequestBody Subscription subscription) {
         try {
             return ResponseEntity.ok().body(service.addSubscription(subscription));
         } catch (Exception e) {
@@ -76,7 +76,7 @@ public class Controller {
         }
     }
     @PostMapping("/dataplans")
-    public ResponseEntity addDataPlan(DataPlan plan) {
+    public ResponseEntity addDataPlan(@RequestBody DataPlan plan) {
         try {
             return ResponseEntity.ok().body(service.addDataPlan(plan));
         } catch (Exception e) {
