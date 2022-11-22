@@ -1,11 +1,13 @@
 package doubleshot.teleNextBackend.model;
 
+import lombok.Getter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "subscriptions")
+@Getter
 public class Subscription {
 
     @Id
