@@ -10,14 +10,13 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class Controller {
 
     @Autowired
     UserService service;
 
     @GetMapping("/users/{id}")
-    @CrossOrigin
     public ResponseEntity<UserDTO> findUserById(@PathVariable String id) {
         try {
             return ResponseEntity.ok().body(service.getUserById(id));
@@ -26,7 +25,6 @@ public class Controller {
         }
     }
     @PostMapping("/users")
-    @CrossOrigin
     public ResponseEntity createUser(@RequestBody UserDTO userDto){
         try {
             User user = service.createUser(userDto);
@@ -36,7 +34,6 @@ public class Controller {
         }
     }
     @DeleteMapping("/{id}")
-    @CrossOrigin
     public ResponseEntity deleteUser(@PathVariable String id){
         try {
             service.deleteUser(id);
@@ -46,7 +43,6 @@ public class Controller {
         }
     }
     @PostMapping("/phones")
-    @CrossOrigin
     public ResponseEntity addPhone(@RequestBody PhoneDTO phone){
         try {
             return ResponseEntity.ok().body(service.addPhone(phone));
