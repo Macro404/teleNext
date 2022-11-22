@@ -25,8 +25,12 @@ public class UserRepository {
         List<Subscription> subscriptions = new ArrayList<>();
         Iterable<Phone> phoneIterable = phoneRepo.findAll();
         Iterable<Subscription> subscriptionIterable = subscriptionRepo.findAll();
-        phoneIterable.forEach(phones::add);
-        subscriptionIterable.forEach(subscriptions::add);
+        for(Phone phone : phoneIterable){
+            phones.add(phone);
+        }
+        for(Subscription subscription: subscriptionIterable){
+            subscriptions.add(subscription);
+        }
         return new ProductsDTO(phones, subscriptions);
     }
 

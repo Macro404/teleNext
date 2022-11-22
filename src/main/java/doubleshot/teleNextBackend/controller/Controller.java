@@ -55,7 +55,6 @@ public class Controller {
         }
     }
     @GetMapping
-    @CrossOrigin
     public ResponseEntity<ProductsDTO> getProducts(){
         return ResponseEntity.ok().body(service.getAllProducts());
     }
