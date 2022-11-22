@@ -23,11 +23,11 @@ public class UserRepository {
         List<Phone> phones = new ArrayList<>();
         List<DataPlan> dataPlans = new ArrayList<>();
         Iterable<Phone> phoneIterable = phoneRepo.findAll();
-        Iterable<DataPlan> subscriptionIterable = dataRepo.findAll();
+        Iterable<DataPlan> dataPlanIterable = dataRepo.findAll();
         for(Phone phone : phoneIterable){
             phones.add(phone);
         }
-        for(DataPlan dataPlan: subscriptionIterable){
+        for(DataPlan dataPlan: dataPlanIterable){
             dataPlans.add(dataPlan);
         }
         return new ProductsDTO(phones, dataPlans);
