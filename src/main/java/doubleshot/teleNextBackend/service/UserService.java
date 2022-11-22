@@ -40,4 +40,12 @@ public class UserService {
     public ProductsDTO getAllProducts(){
         return userRepo.getAllProducts();
     }
+
+    public Subscription addSubscription(Subscription subscription) {
+        return userRepo.saveSubscription(subscription);
+    }
+
+    public DataPlan addDataPlan(DataPlan plan) {
+        return userRepo.saveDataPlan(plan);
+    }
 }

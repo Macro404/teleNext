@@ -1,9 +1,6 @@
 package doubleshot.teleNextBackend.repository;
 
-import doubleshot.teleNextBackend.model.Phone;
-import doubleshot.teleNextBackend.model.ProductsDTO;
-import doubleshot.teleNextBackend.model.Subscription;
-import doubleshot.teleNextBackend.model.User;
+import doubleshot.teleNextBackend.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -19,6 +16,8 @@ public class UserRepository {
     PhoneJpaRepository phoneRepo;
     @Autowired
     UserJpaRepository repo;
+    @Autowired
+    DataPlanJpaRepository dataRepo;
 
     public ProductsDTO getAllProducts(){
         List<Phone> phones = new ArrayList<>();
@@ -48,5 +47,11 @@ public class UserRepository {
 
     public Phone savePhone(Phone phone) {return phoneRepo.save(phone);}
 
-    
+    public Subscription saveSubscription(Subscription subscription) {
+        return subscriptionRepo.save(subscription);
+    }
+
+    public DataPlan saveDataPlan(DataPlan plan) {
+        return dataRepo.save(plan);
+    }
 }

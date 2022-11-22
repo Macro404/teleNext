@@ -67,4 +67,20 @@ public class Controller {
             return ResponseEntity.notFound().build();
         }
     }
+    @PostMapping("/subscriptions")
+    public ResponseEntity addSubscription(Subscription subscription) {
+        try {
+            return ResponseEntity.ok().body(service.addSubscription(subscription));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+    @PostMapping("/dataplans")
+    public ResponseEntity addDataPlan(DataPlan plan) {
+        try {
+            return ResponseEntity.ok().body(service.addDataPlan(plan));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 }
