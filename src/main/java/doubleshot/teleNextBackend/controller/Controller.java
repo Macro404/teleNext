@@ -43,7 +43,7 @@ public class Controller {
         }
     }
     @PostMapping("/phones")
-    public ResponseEntity addPhone(@RequestBody PhoneDTO phone){
+    public ResponseEntity<Phone> addPhone(@RequestBody PhoneDTO phone){
         try {
             return ResponseEntity.ok().body(service.addPhone(phone));
         } catch (Exception e) {
