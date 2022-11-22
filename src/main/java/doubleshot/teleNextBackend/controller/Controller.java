@@ -11,19 +11,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "*")
 public class Controller {
 
     @Autowired
     UserService service;
 
-    @GetMapping("/phones")
-    public ResponseEntity<List<Phone>> getPhones() {
-        try {
-            return ResponseEntity.ok().body(service.getAllProducts().phones());
-        } catch (Exception e) {
-            return ResponseEntity.notFound().build();
-        }
-    }
     @GetMapping("/users/{id}")
     public ResponseEntity<UserDTO> findUserById(@PathVariable String id) {
         try {
@@ -66,5 +59,12 @@ public class Controller {
             return ResponseEntity.notFound().build();
         }
     }
-
+    @GetMapping("/phones")
+    public ResponseEntity<List<Phone>> getPhones() {
+        try {
+            return ResponseEntity.ok().body(service.getAllProducts().phones());
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
