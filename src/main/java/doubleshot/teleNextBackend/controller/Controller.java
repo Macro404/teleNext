@@ -10,7 +10,6 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*")
 public class Controller {
 
     @Autowired
@@ -51,7 +50,6 @@ public class Controller {
         }
     }
     @GetMapping("/")
-    @CrossOrigin(origins = "*")
     public ResponseEntity<ProductsDTO> getProducts(){
         try{
             return ResponseEntity.status(200).body(service.getAllProducts());
