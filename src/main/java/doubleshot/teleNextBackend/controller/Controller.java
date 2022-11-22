@@ -76,7 +76,7 @@ public class Controller {
         }
     }
     @PostMapping("/dataplans")
-    public ResponseEntity addDataPlan(@RequestBody DataPlan plan) {
+    public ResponseEntity<DataPlan> addDataPlan(@RequestBody DataPlan plan) {
         try {
             return ResponseEntity.ok().body(service.addDataPlan(plan));
         } catch (Exception e) {

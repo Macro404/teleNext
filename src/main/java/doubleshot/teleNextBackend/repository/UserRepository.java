@@ -21,16 +21,16 @@ public class UserRepository {
 
     public ProductsDTO getAllProducts(){
         List<Phone> phones = new ArrayList<>();
-        List<Subscription> subscriptions = new ArrayList<>();
+        List<DataPlan> dataPlans = new ArrayList<>();
         Iterable<Phone> phoneIterable = phoneRepo.findAll();
-        Iterable<Subscription> subscriptionIterable = subscriptionRepo.findAll();
+        Iterable<DataPlan> subscriptionIterable = dataRepo.findAll();
         for(Phone phone : phoneIterable){
             phones.add(phone);
         }
-        for(Subscription subscription: subscriptionIterable){
-            subscriptions.add(subscription);
+        for(DataPlan dataPlan: subscriptionIterable){
+            dataPlans.add(dataPlan);
         }
-        return new ProductsDTO(phones, subscriptions);
+        return new ProductsDTO(phones, dataPlans);
     }
 
     public User getUserById(String id){
