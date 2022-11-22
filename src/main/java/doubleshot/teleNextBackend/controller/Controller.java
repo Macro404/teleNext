@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -54,6 +55,14 @@ public class Controller {
         try{
             return ResponseEntity.status(200).body(service.getAllProducts());
         }catch (Exception e){
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @GetMapping("/phones")
+    public ResponseEntity<List<Phone>> getPhones() {
+        try {
+            return ResponseEntity.ok().body(service.getAllProducts().phones());
+        } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
     }
