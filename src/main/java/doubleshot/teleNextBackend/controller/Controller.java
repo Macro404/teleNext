@@ -36,6 +36,7 @@ public class Controller {
         }
     }
     @DeleteMapping("/{id}")
+    @CrossOrigin
     public ResponseEntity deleteUser(@PathVariable String id){
         try {
             service.deleteUser(id);
@@ -45,6 +46,7 @@ public class Controller {
         }
     }
     @PostMapping("/phones")
+    @CrossOrigin
     public ResponseEntity addPhone(@RequestBody PhoneDTO phone){
         try {
             return ResponseEntity.ok().body(service.addPhone(phone));
@@ -53,7 +55,8 @@ public class Controller {
         }
     }
     @GetMapping
-    public ResponseEntity getProducts(){
+    @CrossOrigin
+    public ResponseEntity<ProductsDTO> getProducts(){
         return ResponseEntity.ok().body(service.getAllProducts());
     }
 }
