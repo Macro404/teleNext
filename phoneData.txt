@@ -1,0 +1,118 @@
+{
+	"model" : "iPhone 14 Pro"
+	"price" : 8990
+	"camera" : "48MP Main camera for up to 4x greater resolution"
+	"cpu" : "A15 Bionic chip"
+	"battery" : "4323 mAh"
+	"screen" : "6.7-inch Super Retina XDR display"
+  "images" : "https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-14-pro/carousel/spaceblack/spaceblack2.png,https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-14-pro/carousel/spaceblack/spaceblack1.png,https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-14-pro/defaultimage/space-black-hero-zoom.png,https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-14-pro/carousel/spaceblack/spaceblack3.png,https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-14-pro/carousel/spaceblack/spaceblack4.png,https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-14-pro/carousel/spaceblack/spaceblack5.png"
+}
+
+{
+	"model" : "Samsung Galaxy S22",
+	"price" : 7990,
+	"camera" : "50 MP wide / 10 MP tele / 12 MP ultra-wide rear cameras",
+	"cpu" : "Powerful Qualcomm® Snapdragon™ 8 Gen 1 chip and octa-core processor",
+	"battery" : "3,700 mAh",
+	"screen" : "6.1-inch 120Hz ultra-bright display with Corning® Gorilla® Glass Victus™",
+	"images" : "https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-s22/defaultimage/bora-purple-hero-zoom.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-s22/carousel/borapurple/borapurple1.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-s22/carousel/borapurple/borapurple2.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-s22/carousel/borapurple/borapurple3.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-s22/carousel/borapurple/borapurple4.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-s22/carousel/borapurple/borapurple5.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-s22/carousel/borapurple/borapurple6.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-s22/carousel/borapurple/borapurple7.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-s22/carousel/borapurple/borapurple8.png"
+}
+
+{
+	"model" : "Google Pixel 7",
+	"price" : 7390,
+	"camera" : "Main: 50 MP, 1/1.3", 1.2um, ƒ/1.85 aperture
+Rear Ultra Wide: 12 MP, 1.25um, ƒ/2.2 aperture",
+	"cpu" : "Tensor G2, Octa-core, 2@2.76GHz, 2@2.32GHz, 4@1.94GHz"
+	"battery" : "4355 mAh"
+	"screen" : "6,3-inch, 1080 x 2400p",
+	"images" : "https://www.att.com/idpassets/global/devices/phones/google/google-pixel-7/defaultimage/obsidian-hero-zoom.png,https://www.att.com/idpassets/global/devices/phones/google/google-pixel-7/carousel/obsidian/obsidian-1.png,https://www.att.com/idpassets/global/devices/phones/google/google-pixel-7/carousel/obsidian/obsidian-2.png,https://www.att.com/idpassets/global/devices/phones/google/google-pixel-7/carousel/obsidian/obsidian-3.png,https://www.att.com/idpassets/global/devices/phones/google/google-pixel-7/carousel/obsidian/obsidian-4.png,https://www.att.com/idpassets/global/devices/phones/google/google-pixel-7/carousel/obsidian/obsidian-5.png,https://www.att.com/idpassets/global/devices/phones/google/google-pixel-7/carousel/obsidian/obsidian-6.png,https://www.att.com/idpassets/global/devices/phones/google/google-pixel-7/carousel/obsidian/obsidian-7.png,https://www.att.com/idpassets/global/devices/phones/google/google-pixel-7/carousel/obsidian/obsidian-8.png"
+}
+
+{
+	"model" : "Samsung Galaxy Z Flip3 5G",
+	"price" : 8990,
+	"camera" : "Wide 12 MP OIS AF F1.8,
+UltraWide 12 MP AF F2.2",
+	"cpu" : "Qualcomm® Snapdragon™ 888 5G",
+	"battery" : "3,300 mAh",
+	"screen" : "Main screen: 6.7-inch, Cover screen: 1.9-inch"
+	"images" : "https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-z-flip3-5g/carousel/Phantomblack/6039D-1.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-z-flip3-5g/defaultimage/phantom-black-hero-zoom.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-z-flip3-5g/carousel/Phantomblack/6039D-2.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-z-flip3-5g/carousel/Phantomblack/6039D-3.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-z-flip3-5g/carousel/Phantomblack/6039D-4.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-z-flip3-5g/carousel/Phantomblack/6039D-5.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-z-flip3-5g/carousel/Phantomblack/6039D-6.png"
+}
+
+{
+	"model" : "motorola edge - 2022",
+	"price" : 4990
+	"camera" : "50 MP triple high-res camera with OIS"
+	"cpu" : "Octa-core, 2 at 2.5GHz and 6 at 2.0GHz"
+	"battery" : "5,000mAh"
+	"screen" : "6.6-inch FHD+ OLED, 2400 x 1080"
+	"images" : "https://www.att.com/idpassets/global/devices/phones/motorola/motorola-motorola-edge-2022/defaultimage/mineral-gray-hero-zoom.png,https://www.att.com/idpassets/global/devices/phones/motorola/motorola-motorola-edge-2022/carousel/mineralgray/mineralgray1.png,https://www.att.com/idpassets/global/devices/phones/motorola/motorola-motorola-edge-2022/carousel/mineralgray/mineralgray2.png,https://www.att.com/idpassets/global/devices/phones/motorola/motorola-motorola-edge-2022/carousel/mineralgray/mineralgray3.png,https://www.att.com/idpassets/global/devices/phones/motorola/motorola-motorola-edge-2022/carousel/mineralgray/mineralgray4.png,https://www.att.com/idpassets/global/devices/phones/motorola/motorola-motorola-edge-2022/carousel/mineralgray/mineralgray5.png,https://www.att.com/idpassets/global/devices/phones/motorola/motorola-motorola-edge-2022/carousel/mineralgray/mineralgray6.png,https://www.att.com/idpassets/global/devices/phones/motorola/motorola-motorola-edge-2022/carousel/mineralgray/mineralgray7.png,https://www.att.com/idpassets/global/devices/phones/motorola/motorola-motorola-edge-2022/carousel/mineralgray/mineralgray8.png,https://www.att.com/idpassets/global/devices/phones/motorola/motorola-motorola-edge-2022/carousel/mineralgray/mineralgray9.png,https://www.att.com/idpassets/global/devices/phones/motorola/motorola-motorola-edge-2022/carousel/mineralgray/mineralgray10.png"
+}
+
+{
+	"model" : "Samsung Galaxy A13 5G",
+	"price" : 4990,
+	"camera" : "50 MP/2 MP/ 2 MP triple lens rear camera, 5 MP front camera",
+	"cpu" : "MediaTek Dimensity 700",
+	"battery" : "5,000 mAh",
+	"screen" : "6.5-inch, 720 x 1600p",
+	"images" : "https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-a13-5g/defaultimage/black-hero-zoom.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-a13-5g/carousel/6270D-1.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-a13-5g/carousel/6270D-2.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-a13-5g/carousel/6270D-3.png, https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-a13-5g/carousel/6270D-4.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-a13-5g/carousel/6270D-5.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-a13-5g/carousel/6270D-6.png,https://www.att.com/idpassets/global/devices/phones/samsung/samsung-galaxy-a13-5g/carousel/6270D-7.png"
+}
+
+{
+	"model" : "Kyocera DuraXE Epic",
+	"price" : 2690,
+	"camera" : "5 MP (2592 x 1944), F2.4 Auto Focus",
+	"cpu" : "Qualcomm® Snapdragon™ 215",
+	"battery" : "1,770 mAh",
+	"screen" : "2.6 TFT, 240 x 320p",
+	"images" : "https://www.att.com/idpassets/global/devices/phones/kyocera/kyocera-duraxe-epic/defaultimage/black-hero-zoom.png,https://www.att.com/idpassets/global/devices/phones/kyocera/kyocera-duraxe-epic/carousel/6695C-1.png,https://www.att.com/idpassets/global/devices/phones/kyocera/kyocera-duraxe-epic/carousel/6695C-2.png,https://www.att.com/idpassets/global/devices/phones/kyocera/kyocera-duraxe-epic/carousel/6695C-3.png,https://www.att.com/idpassets/global/devices/phones/kyocera/kyocera-duraxe-epic/carousel/6695C-4.png,https://www.att.com/idpassets/global/devices/phones/kyocera/kyocera-duraxe-epic/carousel/6695C-5.png,https://www.att.com/idpassets/global/devices/phones/kyocera/kyocera-duraxe-epic/carousel/6695C-6.png,https://www.att.com/idpassets/global/devices/phones/kyocera/kyocera-duraxe-epic/carousel/6695C-7.png,https://www.att.com/idpassets/global/devices/phones/kyocera/kyocera-duraxe-epic/carousel/6695C-8.png,https://www.att.com/idpassets/global/devices/phones/kyocera/kyocera-duraxe-epic/carousel/6695C-9.png,https://www.att.com/idpassets/global/devices/phones/kyocera/kyocera-duraxe-epic/carousel/6695C-10.png,https://www.att.com/idpassets/global/devices/phones/kyocera/kyocera-duraxe-epic/carousel/6695C-11.png"
+}
+
+{
+	"model" : "Sonim XP10",
+	"price" : 5690,
+	"camera" : "Dual rear 50 MP, 8 MP wide FOV",
+	"cpu" : "Qualcomm® Snapdragon® 480",
+	"battery" : "5,000 mAh",
+	"screen" : "5,5-inch, 1080 x 2160p"
+	"images" : "https://www.att.com/idpassets/global/devices/phones/sonim/sonim-xp10/defaultimage/black-hero-zoom.png,https://www.att.com/idpassets/global/devices/phones/sonim/sonim-xp10/carousel/black/black-1.png,https://www.att.com/idpassets/global/devices/phones/sonim/sonim-xp10/carousel/black/black-2.png,https://www.att.com/idpassets/global/devices/phones/sonim/sonim-xp10/carousel/black/black-3.png,https://www.att.com/idpassets/global/devices/phones/sonim/sonim-xp10/carousel/black/black-4.png,https://www.att.com/idpassets/global/devices/phones/sonim/sonim-xp10/carousel/black/black-5.png,https://www.att.com/idpassets/global/devices/phones/sonim/sonim-xp10/carousel/black/black-6.png,https://www.att.com/idpassets/global/devices/phones/sonim/sonim-xp10/carousel/black/black-7.png,https://www.att.com/idpassets/global/devices/phones/sonim/sonim-xp10/carousel/black/black-8.png,https://www.att.com/idpassets/global/devices/phones/sonim/sonim-xp10/carousel/black/black-9.png,https://www.att.com/idpassets/global/devices/phones/sonim/sonim-xp10/carousel/black/black-10.png"
+}
+
+{
+	"model" : "iPhone 13 Pro Max",
+	"price" : 10990,
+	"camera" : "Pro 12MP camera system",
+	"cpu" : "New 16‑core Neural Engine",
+	"battery" : "4352 mAh",
+	"screen" : "6,7-inch, 2778 x 1284p",
+	"images" : "https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-13-pro-max/defaultimage/Alpine%20Green-hero-zoom.png,https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-13-pro-max/Carousel/alpinegreen/AlpineGreen-1.png,https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-13-pro-max/Carousel/alpinegreen/AlpineGreen-2.png,https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-13-pro-max/Carousel/alpinegreen/AlpineGreen-3.png,https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-13-pro-max/Carousel/alpinegreen/AlpineGreen-4.png,https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-13-pro-max/Carousel/alpinegreen/AlpineGreen-5.png"
+}
+
+{
+	"model" : 
+	"price" :
+	"camera" :
+	"cpu" :
+	"battery" :
+	"screen" :
+}
+
+{
+	"id" : "1890ab17-a0d1-4f7e-ad9c-7995d216ce0f",
+	"rate" : 99,
+	"data" : 10
+}
+
+{
+	"id" : "b9213aac-2b74-41ab-92aa-5e2bebe56d35",
+	"rate" : 199,
+	"data" : 25
+}
+
+{
+	"id" : "5148599f-4f22-4f9d-909a-56a1ee90dd90",
+	"rate" : 299,
+	"data" : 50
+}
