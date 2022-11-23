@@ -1,11 +1,14 @@
 package doubleshot.teleNextBackend.model;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "subscription")
+@Table(name = "subscriptions")
+@Getter @Setter
 public class Subscription {
 
     @Id
@@ -13,4 +16,15 @@ public class Subscription {
     @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
     @Column(name = "id", unique = true)
     private String id;
+
+    @JoinColumn(name = "user_id")
+    private String userId;
+
+    private double rate;
+
+    private double data;
+
+    public Subscription(){
+
+    }
 }
