@@ -3,10 +3,7 @@ package doubleshot.teleNextBackend.service;
 import doubleshot.teleNextBackend.model.*;
 import doubleshot.teleNextBackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.UUID;
 
 @Service
 public class UserService {
@@ -22,11 +19,11 @@ public class UserService {
     }
 
     public User userDtoToUser(UserDTO userDTO){
-        return new User(userDTO.id(), userDTO.name(), userDTO.address(), userDTO.phoneNumber(), userDTO.personNumber());
+        return new User(userDTO.id(), userDTO.name(), userDTO.email(), userDTO.address(), userDTO.phoneNumber(), userDTO.personNumber());
     }
 
     public UserDTO  userToUserDto(User user){
-        return new UserDTO(user.getId(), user.getName(), user.getAddress(), user.getPhoneNumber(), user.getPersonNumber());
+        return new UserDTO(user.getId(), user.getName(), user.getEmail(), user.getAddress(), user.getPhoneNumber(), user.getPersonNumber());
     }
 
     public void deleteUser(String id) {

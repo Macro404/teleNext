@@ -25,14 +25,16 @@ public class User {
     private List<Subscription> subscriptions;
 
     private String name;
-
+    private String email;
     private String address;
+
+
 
     private String phoneNumber;
 
     private String personNumber;
 
-    public User(String id, String name, String address, String phoneNumber, String personNumber) {
+    public User(String id, String name, String email, String address, String phoneNumber, String personNumber) {
         this.id = id;
         this.name = name;
         this.address = address;
