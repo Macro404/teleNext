@@ -22,11 +22,11 @@ public class UserService {
     }
 
     public User userDtoToUser(UserDTO userDTO){
-        return new User(userDTO.name(), userDTO.address(), userDTO.phoneNumber(), userDTO.personNumber());
+        return new User(userDTO.id(), userDTO.name(), userDTO.address(), userDTO.phoneNumber(), userDTO.personNumber());
     }
 
     public UserDTO  userToUserDto(User user){
-        return new UserDTO(user.getName(), user.getAddress(), user.getPhoneNumber(), user.getPersonNumber());
+        return new UserDTO(user.getId(), user.getName(), user.getAddress(), user.getPhoneNumber(), user.getPersonNumber());
     }
 
     public void deleteUser(String id) {

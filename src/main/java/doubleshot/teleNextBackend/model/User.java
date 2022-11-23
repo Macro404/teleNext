@@ -32,8 +32,8 @@ public class User {
 
     private String personNumber;
 
-    public User(String name, String address, String phoneNumber, String personNumber) {
-        this.id = UUID.randomUUID().toString();
+    public User(String id, String name, String address, String phoneNumber, String personNumber) {
+        this.id = id;
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
