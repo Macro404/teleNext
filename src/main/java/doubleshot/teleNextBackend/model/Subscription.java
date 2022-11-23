@@ -20,7 +20,11 @@ public class Subscription {
     @JoinColumn(name = "user_id")
     private String userId;
 
-    private double rate;
+    @Column(name = "data_rate")
+    private double dateRate;
+
+    @Column(name = "phone_rate")
+    private double phoneRate;
 
     private double data;
 
