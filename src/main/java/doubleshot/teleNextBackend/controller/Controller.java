@@ -18,16 +18,18 @@ public class Controller {
     UserService service;
 
     @GetMapping("/users/{id}")
-    public ResponseEntity<UserDTO> findUserById(@PathVariable String id) {
+    public ResponseEntity<UserDTO> findUserById(@RequestHeader("web_token") String token, @PathVariable String id) {
         try {
+            validateToken(token);
             return ResponseEntity.ok().body(service.getUserById(id));
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
     }
     @PostMapping("/users")
-    public ResponseEntity createUser(@RequestBody UserDTO userDto){
+    public ResponseEntity createUser(@RequestHeader("web_token") String token, @RequestBody UserDTO userDto){
         try {
+            validateToken(token);
             User user = service.createUser(userDto);
             return ResponseEntity.created(URI.create("/api/users/" + user.getId())).build();
         } catch (Exception e) {
@@ -35,8 +37,9 @@ public class Controller {
         }
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteUser(@PathVariable String id){
+    public ResponseEntity deleteUser(@RequestHeader("web_token") String token, @PathVariable String id){
         try {
+            validateToken(token);
             service.deleteUser(id);
             return ResponseEntity.status(204).build();
         } catch (Exception e) {
@@ -44,8 +47,9 @@ public class Controller {
         }
     }
     @PostMapping("/phones")
-    public ResponseEntity<Phone> addPhone(@RequestBody PhoneDTO phone){
+    public ResponseEntity<Phone> addPhone(@RequestHeader("web_token") String token,@RequestBody PhoneDTO phone){
         try {
+            validateToken(token);
             return ResponseEntity.ok().body(service.addPhone(phone));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
@@ -62,25 +66,34 @@ public class Controller {
     @GetMapping("/phones")
     public ResponseEntity<List<Phone>> getPhones() {
         try {
+
             return ResponseEntity.ok().body(service.getAllProducts().phones());
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
     }
     @PostMapping("/subscriptions")
-    public ResponseEntity addSubscription(@RequestBody Subscription subscription) {
+    public ResponseEntity addSubscription(@RequestHeader("web_token") String token, @RequestBody Subscription subscription) {
         try {
+            validateToken(token);
             return ResponseEntity.ok().body(service.addSubscription(subscription));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
     }
     @PostMapping("/dataplans")
-    public ResponseEntity<DataPlan> addDataPlan(@RequestBody DataPlan plan) {
+    public ResponseEntity<DataPlan> addDataPlan(@RequestHeader("web_token") String token, @RequestBody DataPlan plan) {
         try {
+            validateToken(token);
             return ResponseEntity.ok().body(service.addDataPlan(plan));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
+        }
+    }
+
+    private void validateToken(String token) throws IllegalAccessException {
+        if(!token.equals(System.getenv("JWT_TOKEN"))){
+            throw new IllegalAccessException();
         }
     }
 }
