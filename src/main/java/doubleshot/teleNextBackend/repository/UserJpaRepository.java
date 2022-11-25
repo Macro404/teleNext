@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface UserJpaRepository extends CrudRepository<User, String> {
     User findUserById(String id);
+    Iterable<User> findUsersByEmail(String email);
 }

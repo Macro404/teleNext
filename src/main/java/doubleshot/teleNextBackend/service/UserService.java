@@ -5,6 +5,8 @@ import doubleshot.teleNextBackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
     @Autowired
@@ -44,5 +46,9 @@ public class UserService {
 
     public DataPlan addDataPlan(DataPlan plan) {
         return userRepo.saveDataPlan(plan);
+    }
+
+    public List<Subscription> getSubscriptionByEmail(String email){
+        return userRepo.getSubscriptionByEmail(email);
     }
 }

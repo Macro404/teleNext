@@ -90,6 +90,15 @@ public class Controller {
             return ResponseEntity.badRequest().build();
         }
     }
+    @GetMapping("/subscriptions/{email}")
+    public ResponseEntity getSubscriptionsByEmail(@RequestHeader("web_token") String token, @PathVariable String email){
+        try{
+            validateToken(token);
+            return ResponseEntity.ok(service.getSubscriptionByEmail(email));
+        }catch (Exception e){
+            return ResponseEntity.notFound().build();
+        }
+    }
 
     private void validateToken(String token) throws IllegalAccessException {
         if(!token.equals(System.getenv("JWT_TOKEN"))){

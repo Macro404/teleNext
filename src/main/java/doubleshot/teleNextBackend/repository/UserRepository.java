@@ -54,4 +54,16 @@ public class UserRepository {
     public DataPlan saveDataPlan(DataPlan plan) {
         return dataRepo.save(plan);
     }
+
+    public List<Subscription> getSubscriptionByEmail(String email){
+        User user = repo.findUsersByEmail(email).iterator().next();
+        System.out.println(user.getId());
+        List<Subscription> subscriptions = new ArrayList<>();
+        Iterable<Subscription> subscriptionIterable = subscriptionRepo.findSubscriptionByUserId(user.getId());
+        for(Subscription sub : subscriptionIterable){
+            subscriptions.add(sub);
+            System.out.println(sub.getPhoneRate());
+        }
+        return subscriptions;
+    }
 }
