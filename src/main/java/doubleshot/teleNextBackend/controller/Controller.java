@@ -27,16 +27,16 @@ public class Controller {
         }
     }
     @PostMapping("/users")
-    public ResponseEntity createUser(@RequestHeader("web_token") String token, @RequestBody UserDTO userDto){
+    public ResponseEntity createUser(@RequestHeader("web_token") String token, @RequestBody CreateUserDTO newUser){
         try {
             validateToken(token);
-            User user = service.createUser(userDto);
+            User user = service.createUser(newUser);
             return ResponseEntity.created(URI.create("/api/users/" + user.getId())).build();
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/users/{id}")
     public ResponseEntity deleteUser(@RequestHeader("web_token") String token, @PathVariable String id){
         try {
             validateToken(token);
@@ -90,13 +90,23 @@ public class Controller {
             return ResponseEntity.badRequest().build();
         }
     }
-    @GetMapping("/subscriptions/{email}")
+    @GetMapping("/users/{email}")
     public ResponseEntity getSubscriptionsByEmail(@RequestHeader("web_token") String token, @PathVariable String email){
         try{
             validateToken(token);
-            return ResponseEntity.ok(service.getSubscriptionByEmail(email));
+            return ResponseEntity.ok(service.getUserByEmail(email));
         }catch (Exception e){
             return ResponseEntity.notFound().build();
+        }
+    }
+    @DeleteMapping("users/{userId}/subscriptions/{subscriptionId}")
+    public ResponseEntity deleteSubscription(@RequestHeader("web_token") String token, @PathVariable String userId, @PathVariable String subscriptionId){
+        try {
+            validateToken(token);
+            service.deleteSubscription(subscriptionId);
+            return ResponseEntity.status(204).build();
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
         }
     }
 

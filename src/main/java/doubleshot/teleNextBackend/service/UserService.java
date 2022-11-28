@@ -1,7 +1,7 @@
 package doubleshot.teleNextBackend.service;
 
 import doubleshot.teleNextBackend.model.*;
-import doubleshot.teleNextBackend.repository.UserRepository;
+import doubleshot.teleNextBackend.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,45 +10,53 @@ import java.util.List;
 @Service
 public class UserService {
     @Autowired
-    UserRepository userRepo;
+    Repository repo;
 
     public UserDTO getUserById(String id){
-        return userToUserDto(userRepo.getUserById(id));
+        return userToDTO(repo.getUserById(id));
     }
 
-    public User createUser(UserDTO userDTO) {
-        return userRepo.saveUser(userDtoToUser(userDTO));
-    }
-
-    public User userDtoToUser(UserDTO userDTO){
-        return new User(userDTO.id(), userDTO.name(), userDTO.email(), userDTO.address(), userDTO.phoneNumber(), userDTO.personNumber());
-    }
-
-    public UserDTO  userToUserDto(User user){
-        return new UserDTO(user.getId(), user.getName(), user.getEmail(), user.getAddress(), user.getPhoneNumber(), user.getPersonNumber());
+    public User createUser(CreateUserDTO newUser) {
+        return repo.saveUser(DTOToUser(newUser));
     }
 
     public void deleteUser(String id) {
-        userRepo.deleteUser(id);
+        repo.deleteUser(id);
     }
 
     public Phone addPhone(PhoneDTO dto) {
-        return userRepo.savePhone(new Phone(dto.model(), dto.price(), dto.camera(), dto.cpu(), dto.battery(), dto.screen(), dto.images()));
+        return repo.savePhone(new Phone(dto.model(), dto.price(), dto.camera(), dto.cpu(), dto.battery(), dto.screen(), dto.images()));
     }
 
     public ProductsDTO getAllProducts(){
-        return userRepo.getAllProducts();
+        return repo.getAllProducts();
     }
 
     public Subscription addSubscription(Subscription subscription) {
-        return userRepo.saveSubscription(subscription);
+        return repo.saveSubscription(subscription);
     }
 
     public DataPlan addDataPlan(DataPlan plan) {
-        return userRepo.saveDataPlan(plan);
+        return repo.saveDataPlan(plan);
     }
 
     public List<Subscription> getSubscriptionByEmail(String email){
-        return userRepo.getSubscriptionByEmail(email);
+        return repo.getSubscriptionByEmail(email);
+    }
+
+    public void deleteSubscription(String id) {
+        repo.deleteSubscription(id);
+    }
+
+    public UserDTO getUserByEmail(String email) {
+        return userToDTO(repo.findUserByEmail(email));
+    }
+
+    public UserDTO userToDTO(User user){
+        return new UserDTO(user.getId(), user.getName(), user.getEmail(), user.getAddress(), user.getPhoneNumber(), user.getTransactions(), user.getSubscriptions());
+    }
+
+    public User DTOToUser(CreateUserDTO createUserDTO){
+        return new User(createUserDTO.name(), createUserDTO.email(), createUserDTO.address(), createUserDTO.phoneNumber(), createUserDTO.personNumber());
     }
 }

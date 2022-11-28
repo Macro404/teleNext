@@ -2,20 +2,19 @@ package doubleshot.teleNextBackend.repository;
 
 import doubleshot.teleNextBackend.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
-public class UserRepository {
+@org.springframework.stereotype.Repository
+public class Repository {
 
     @Autowired
     SubscriptionJpaRepository subscriptionRepo;
     @Autowired
     PhoneJpaRepository phoneRepo;
     @Autowired
-    UserJpaRepository repo;
+    UserJpaRepository userRepo;
     @Autowired
     DataPlanJpaRepository dataRepo;
 
@@ -34,15 +33,15 @@ public class UserRepository {
     }
 
     public User getUserById(String id){
-        return repo.findUserById(id);
+        return userRepo.findUserById(id);
     }
 
     public User saveUser(User user){
-        return repo.save(user);
+        return userRepo.save(user);
     }
 
     public void deleteUser(String id) {
-        repo.deleteById(id);
+        userRepo.deleteById(id);
     }
 
     public Phone savePhone(Phone phone) {return phoneRepo.save(phone);}
@@ -56,14 +55,20 @@ public class UserRepository {
     }
 
     public List<Subscription> getSubscriptionByEmail(String email){
-        User user = repo.findUsersByEmail(email).iterator().next();
-        System.out.println(user.getId());
+        User user = userRepo.findUsersByEmail(email).iterator().next();
         List<Subscription> subscriptions = new ArrayList<>();
         Iterable<Subscription> subscriptionIterable = subscriptionRepo.findSubscriptionByUserId(user.getId());
         for(Subscription sub : subscriptionIterable){
             subscriptions.add(sub);
-            System.out.println(sub.getPhoneRate());
         }
         return subscriptions;
+    }
+
+    public void deleteSubscription(String id) {
+        subscriptionRepo.deleteById(id);
+    }
+
+    public User findUserByEmail(String email) {
+        return userRepo.findUsersByEmail(email).iterator().next();
     }
 }

@@ -17,14 +17,15 @@ public class Subscription {
     @Column(name = "id", unique = true)
     private String id;
 
+    @ManyToOne
     @JoinColumn(name = "user_id")
-    private String userId;
-
-    @Column(name = "data_rate")
-    private double dateRate;
-
+    private User user;
+    @Column(name = "phone_number")
+    private long phoneNumber;
     @Column(name = "phone_rate")
     private double phoneRate;
+    @Column(name = "data_rate")
+    private double dataRate;
 
     private double data;
 

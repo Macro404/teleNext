@@ -2,8 +2,6 @@ package doubleshot.teleNextBackend.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
@@ -20,7 +18,7 @@ public class User {
             targetEntity = Subscription.class,
             cascade = CascadeType.ALL,
             orphanRemoval = true,
-            mappedBy = "userId"
+            mappedBy = "user"
     )
     private List<Subscription> subscriptions;
 
@@ -28,15 +26,24 @@ public class User {
     private String email;
     private String address;
 
+    @OneToMany(
+            mappedBy = "user",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Transaction> transactions;
+
 
 
     private String phoneNumber;
 
     private String personNumber;
 
-    public User(String id, String name, String email, String address, String phoneNumber, String personNumber) {
-        this.id = id;
+    public User(String name, String email, String address, String phoneNumber, String personNumber) {
+        this.id = UUID.randomUUID().toString();
         this.name = name;
+        this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.personNumber = personNumber;
