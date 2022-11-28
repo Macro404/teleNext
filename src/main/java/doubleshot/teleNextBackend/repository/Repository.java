@@ -17,7 +17,6 @@ public class Repository {
     UserJpaRepository userRepo;
     @Autowired
     DataPlanJpaRepository dataRepo;
-
     public ProductsDTO getAllProducts(){
         List<Phone> phones = new ArrayList<>();
         List<DataPlan> dataPlans = new ArrayList<>();
@@ -64,11 +63,25 @@ public class Repository {
         return subscriptions;
     }
 
+    public List<Phone> findPhonesById(List<String> ids){
+        List<Phone> phones = ids.stream().map(id -> phoneRepo.findById(id).get()).toList();
+        return phones;
+    }
+
     public void deleteSubscription(String id) {
         subscriptionRepo.deleteById(id);
     }
 
     public User findUserByEmail(String email) {
         return userRepo.findUsersByEmail(email).iterator().next();
+    }
+
+    public List<DataPlan> findDataPlansById(List<String> ids) {
+        List<DataPlan> plans = ids.stream().map(id -> dataRepo.findById(id).get()).toList();
+        return plans;
+    }
+
+    public void saveTransaction(Transaction transaction) {
+        saveTransaction(transaction);
     }
 }

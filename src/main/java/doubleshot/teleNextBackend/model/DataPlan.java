@@ -17,7 +17,7 @@ public class DataPlan {
 
     private double rate;
 
-    private double data;
+    private Double data;
 
     public DataPlan() {
     }

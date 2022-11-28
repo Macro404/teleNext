@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Random;
 
 @Entity
 @Table(name = "subscriptions")
@@ -21,7 +22,7 @@ public class Subscription {
     @JoinColumn(name = "user_id")
     private User user;
     @Column(name = "phone_number")
-    private long phoneNumber;
+    private Double phoneNumber;
     @Column(name = "phone_rate")
     private double phoneRate;
     @Column(name = "data_rate")
@@ -31,5 +32,12 @@ public class Subscription {
 
     public Subscription(){
 
+    }
+
+    public Subscription(User user, double dataRate, double data) {
+        this.user = user;
+        this.phoneNumber = new Random().nextDouble(100000000,888888888) * 11;
+        this.dataRate = dataRate;
+        this.data = data;
     }
 }

@@ -2,7 +2,9 @@ package doubleshot.teleNextBackend.controller;
 
 import doubleshot.teleNextBackend.model.*;
 import doubleshot.teleNextBackend.service.UserService;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +28,7 @@ public class Controller {
             return ResponseEntity.notFound().build();
         }
     }
-    @PostMapping("/users")
+    @PostMapping(value = "/users", consumes = "application/json")
     public ResponseEntity createUser(@RequestHeader("web_token") String token, @RequestBody CreateUserDTO newUser){
         try {
             validateToken(token);
@@ -72,11 +74,12 @@ public class Controller {
             return ResponseEntity.notFound().build();
         }
     }
-    @PostMapping("/subscriptions")
-    public ResponseEntity addSubscription(@RequestHeader("web_token") String token, @RequestBody Subscription subscription) {
+    @PostMapping("/users/{id}/transactions")
+    public ResponseEntity addTransaction(@RequestHeader("web_token") String token, @RequestBody OrderDTO orderDTO, @PathVariable String id) {
         try {
             validateToken(token);
-            return ResponseEntity.ok().body(service.addSubscription(subscription));
+            service.addOrder(orderDTO, id);
+            return ResponseEntity.created(URI.create("/api/users/" + id + "/transactions")).build();
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
