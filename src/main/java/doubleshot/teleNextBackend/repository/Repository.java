@@ -39,8 +39,8 @@ public class Repository {
         return userRepo.save(user);
     }
 
-    public void deleteUser(String id) {
-        userRepo.deleteById(id);
+    public void deleteUser(String email) {
+        userRepo.deleteUserByEmail(email);
     }
 
     public Phone savePhone(Phone phone) {return phoneRepo.save(phone);}
