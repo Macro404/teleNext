@@ -1,5 +1,6 @@
 package doubleshot.teleNextBackend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
@@ -21,6 +22,7 @@ public class Subscription {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
     @Column(name = "phone_number")
     private Double phoneNumber;

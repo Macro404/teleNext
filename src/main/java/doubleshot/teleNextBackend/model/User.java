@@ -1,5 +1,6 @@
 package doubleshot.teleNextBackend.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
@@ -32,6 +33,7 @@ public class User {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
+    @JsonManagedReference
     private List<Transaction> transactions;
 
 

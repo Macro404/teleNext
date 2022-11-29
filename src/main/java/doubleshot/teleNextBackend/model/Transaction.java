@@ -1,5 +1,6 @@
 package doubleshot.teleNextBackend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
@@ -23,6 +24,7 @@ public class Transaction {
     private double amount;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonBackReference
     private User user;
 
     public Transaction(String description, String date, double amount, User user) {

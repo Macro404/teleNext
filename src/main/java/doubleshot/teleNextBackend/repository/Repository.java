@@ -17,6 +17,8 @@ public class Repository {
     UserJpaRepository userRepo;
     @Autowired
     DataPlanJpaRepository dataRepo;
+    @Autowired
+    TransactionJpaRepository transactionRepo;
     public ProductsDTO getAllProducts(){
         List<Phone> phones = new ArrayList<>();
         List<DataPlan> dataPlans = new ArrayList<>();
@@ -82,6 +84,6 @@ public class Repository {
     }
 
     public void saveTransaction(Transaction transaction) {
-        saveTransaction(transaction);
+        transactionRepo.save(transaction);
     }
 }
