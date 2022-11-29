@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -72,11 +73,11 @@ public class UserService {
         double total = phones.stream().map(phone -> phone.getPrice()).reduce(0.0, (a, b) -> a + b)
                 + plans.stream().map(plan -> plan.getRate()).reduce(0.0, (a, b) -> a + b);
         List<String> modelList = phones.stream().map(phone -> phone.getModel()).distinct().toList();
-        List<String> planList = plans.stream().map(plan -> (plan.getData().toString())).distinct().toList();
+        List<String> planList = plans.stream().map(plan -> (((Integer) plan.getData().intValue()).toString())).distinct().toList();
         String description = "";
         User user = repo.getUserById(id);
         for (String model : modelList){
-            model = model.concat(",");
+            model = model.concat(", ");
             System.out.println("model: " + model);
             description = description.concat(model);
         }
@@ -89,6 +90,6 @@ public class UserService {
             repo.saveSubscription(new Subscription(user, plan.getRate(), plan.getData()));
         }
         System.out.println("description: " + description);
-        repo.saveTransaction(new Transaction(description, new Date().toString(), total, user));
+        repo.saveTransaction(new Transaction(description.substring(0, description.length() - 2), new SimpleDateFormat("dd/MM").format(new Date()), total, user));
     }
 }
