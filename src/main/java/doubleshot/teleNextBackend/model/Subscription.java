@@ -25,7 +25,7 @@ public class Subscription {
     @JsonBackReference
     private User user;
     @Column(name = "phone_number")
-    private Double phoneNumber;
+    private int phoneNumber;
     @Column(name = "data_rate")
     private double dataRate;
     private double data;
@@ -37,7 +37,7 @@ public class Subscription {
     public Subscription(User user, double dataRate, double data) {
         this.id = UUID.randomUUID().toString();
         this.user = user;
-        this.phoneNumber = new Random().nextDouble(100000000,888888888) * 11;
+        this.phoneNumber = new Random().nextInt(100000000,888888888) * 11;
         this.dataRate = dataRate;
         this.data = data;
     }
