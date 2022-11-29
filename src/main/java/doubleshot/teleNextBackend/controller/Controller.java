@@ -18,7 +18,7 @@ public class Controller {
 
     @Autowired
     UserService service;
-
+/*
     @GetMapping("/users/{id}")
     public ResponseEntity<UserDTO> findUserById(@RequestHeader("web_token") String token, @PathVariable String id) {
         try {
@@ -27,7 +27,7 @@ public class Controller {
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
-    }
+    }*/
     @PostMapping(value = "/users", consumes = "application/json")
     public ResponseEntity createUser(@RequestHeader("web_token") String token, @RequestBody CreateUserDTO newUser){
         try {
@@ -38,11 +38,11 @@ public class Controller {
             return ResponseEntity.badRequest().build();
         }
     }
-    @DeleteMapping("/users/{id}")
-    public ResponseEntity deleteUser(@RequestHeader("web_token") String token, @PathVariable String id){
+    @DeleteMapping("/users/{email}")
+    public ResponseEntity deleteUser(@RequestHeader("web_token") String token, @PathVariable String email){
         try {
             validateToken(token);
-            service.deleteUser(id);
+            service.deleteUser(email);
             return ResponseEntity.status(204).build();
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();

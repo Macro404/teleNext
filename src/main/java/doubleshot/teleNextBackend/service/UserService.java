@@ -19,11 +19,13 @@ public class UserService {
     }
 
     public User createUser(CreateUserDTO newUser) {
+
+        System.out.println(newUser.name() + " "  + newUser.email());
         return repo.saveUser(DTOToUser(newUser));
     }
 
-    public void deleteUser(String id) {
-        repo.deleteUser(id);
+    public void deleteUser(String email) {
+        repo.deleteUser(email);
     }
 
     public Phone addPhone(PhoneDTO dto) {
