@@ -65,18 +65,28 @@ public class UserService {
     public void addOrder(OrderDTO orderDTO, String id) {
         List<Phone> phones = repo.findPhonesById(orderDTO.phoneIds());
         List<DataPlan> plans = repo.findDataPlansById(orderDTO.planIds());
+        System.out.println(phones.get(0).getModel());
+        System.out.println(plans.get(0).getData().toString());
         double total = phones.stream().map(phone -> phone.getPrice()).reduce(0.0, (a, b) -> a + b)
                 + plans.stream().map(plan -> plan.getRate()).reduce(0.0, (a, b) -> a + b);
-        List<String> descriptionList = phones.stream().map(phone -> phone.getModel()).distinct().toList();
-        plans.stream().map(plan -> (plan.getData().toString())).distinct().forEach(descriptionList::add);
+        List<String> modelList = phones.stream().map(phone -> phone.getModel()).distinct().toList();
+        List<String> planList = plans.stream().map(plan -> (plan.getData().toString())).distinct().toList();
         String description = "";
         User user = repo.getUserById(id);
-        for (String name : descriptionList){
-            description.concat(name + ",");
+        for (String model : modelList){
+            model = model.concat(",");
+            System.out.println("model: " + model);
+            description = description.concat(model);
+        }
+        for (String plan : planList){
+            plan = plan.concat(",");
+            System.out.println("plan: " + plan);
+            description = description.concat(plan);
         }
         for (DataPlan plan : plans) {
             repo.saveSubscription(new Subscription(user, plan.getRate(), plan.getData()));
         }
+        System.out.println("description: " + description);
         repo.saveTransaction(new Transaction(description, new Date().toString(), total, user));
     }
 }

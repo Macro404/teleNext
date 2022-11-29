@@ -77,10 +77,12 @@ public class Controller {
     @PostMapping("/users/{id}/transactions")
     public ResponseEntity addTransaction(@RequestHeader("web_token") String token, @RequestBody OrderDTO orderDTO, @PathVariable String id) {
         try {
+            System.out.println(orderDTO);
             validateToken(token);
             service.addOrder(orderDTO, id);
             return ResponseEntity.created(URI.create("/api/users/" + id + "/transactions")).build();
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.badRequest().build();
         }
     }

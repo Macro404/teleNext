@@ -63,11 +63,6 @@ public class Repository {
         return subscriptions;
     }
 
-    public List<Phone> findPhonesById(List<String> ids){
-        List<Phone> phones = ids.stream().map(id -> phoneRepo.findById(id).get()).toList();
-        return phones;
-    }
-
     public void deleteSubscription(String id) {
         subscriptionRepo.deleteById(id);
     }
@@ -79,6 +74,11 @@ public class Repository {
     public List<DataPlan> findDataPlansById(List<String> ids) {
         List<DataPlan> plans = ids.stream().map(id -> dataRepo.findById(id).get()).toList();
         return plans;
+    }
+
+    public List<Phone> findPhonesById(List<String> ids){
+        List<Phone> phones = ids.stream().map(id -> phoneRepo.findById(id).get()).toList();
+        return phones;
     }
 
     public void saveTransaction(Transaction transaction) {
