@@ -40,7 +40,7 @@ public class Repository {
     }
 
     public void deleteUser(String email) {
-        userRepo.deleteUserByEmail(email);
+        userRepo.deleteUsersByEmail(email);
     }
 
     public Phone savePhone(Phone phone) {return phoneRepo.save(phone);}
