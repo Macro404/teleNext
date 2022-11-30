@@ -82,7 +82,7 @@ public class UserService {
             description = description.concat(model);
         }
         for (String plan : planList){
-            plan = plan.concat(",");
+            plan = plan.concat(", ");
             System.out.println("plan: " + plan);
             description = description.concat(plan);
         }
