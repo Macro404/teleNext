@@ -82,7 +82,7 @@ public class UserService {
             description = description.concat(model);
         }
         for (String plan : planList){
-            plan = plan.concat(", ");
+            plan = plan.concat("GB, ");
             System.out.println("plan: " + plan);
             description = description.concat(plan);
         }
@@ -90,6 +90,6 @@ public class UserService {
             repo.saveSubscription(new Subscription(user, plan.getRate(), plan.getData()));
         }
         System.out.println("description: " + description);
-        repo.saveTransaction(new Transaction(description.substring(0, description.length() - 2), new SimpleDateFormat("dd/MM").format(new Date()), total, user));
+        repo.saveTransaction(new Transaction(description.substring(0, description.length() - 2), new SimpleDateFormat("dd/MM").format(new Date()) + ": ", total, user));
     }
 }
