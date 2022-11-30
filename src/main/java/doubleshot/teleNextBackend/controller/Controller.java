@@ -104,8 +104,8 @@ public class Controller {
             return ResponseEntity.notFound().build();
         }
     }
-    @DeleteMapping("users/{userId}/subscriptions/{subscriptionId}")
-    public ResponseEntity deleteSubscription(@RequestHeader("web_token") String token, @PathVariable String userId, @PathVariable String subscriptionId){
+    @DeleteMapping("/subscriptions/{subscriptionId}")
+    public ResponseEntity deleteSubscription(@RequestHeader("web_token") String token, @PathVariable String subscriptionId){
         try {
             validateToken(token);
             service.deleteSubscription(subscriptionId);
