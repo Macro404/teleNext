@@ -18,16 +18,6 @@ public class Controller {
 
     @Autowired
     UserService service;
-/*
-    @GetMapping("/users/{id}")
-    public ResponseEntity<UserDTO> findUserById(@RequestHeader("web_token") String token, @PathVariable String id) {
-        try {
-            validateToken(token);
-            return ResponseEntity.ok().body(service.getUserById(id));
-        } catch (Exception e) {
-            return ResponseEntity.notFound().build();
-        }
-    }*/
     @PostMapping(value = "/users", consumes = "application/json")
     public ResponseEntity createUser(@RequestHeader("web_token") String token, @RequestBody CreateUserDTO newUser){
         try {
