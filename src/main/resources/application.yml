@@ -16,8 +16,8 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://telenext-db.postgres.database.azure.com:5432/postgres?sslmode=require
-    username: doubleshot
-    password: znt)V%P8pv6S(#q#
+    username: ${PGSQL_DB}
+    password: ${PGSQL_PWD}
   #
   # Add the appropriate JPA config here
   #
